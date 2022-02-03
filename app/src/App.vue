@@ -1,28 +1,27 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <WsCard>
+      <WsTitle>
+        Login
+      </WsTitle>
+
+      <WsInput />
+
+    </WsCard>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import WsCard from "./components/WsCard";
+import WsTitle from "./components/WsTitle";
+import WsInput from "./components/WsInput";
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    WsCard,
+    WsInput,
+    WsTitle
   }
 }
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
