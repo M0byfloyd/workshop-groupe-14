@@ -1,10 +1,16 @@
 <template>
-  <button :type="type" />
+  <button :type="type">
+    <slot>
+
+    </slot>
+  </button>
 </template>
 
 <script>
 export default {
 name: "WsButton",
-  type :{ type : String, required: false}
+  props: {
+    type :{ type : String, required: false}
+  }
 }
 </script>
