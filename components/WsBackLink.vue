@@ -1,17 +1,28 @@
 <template>
   <div class="back-link-container">
-    <div class="arrow" v-if="hasIcon"></div>
-    <NuxtLink class="back-link" :to="link">{{ linkText }}</NuxtLink>
+    <div class="arrow" v-if="hasArrow"></div>
+    <WsLink
+      class="back-link"
+      :customStyle="{ color: 'var(--color-black)' }"
+      :href="link"
+    >
+      {{ linkText }}
+    </WsLink>
   </div>
 </template>
 
 <script>
+import WsLink from "~/components/WsLink";
+
 export default {
   name: "",
   props: {
-    link: String,
-    linkText: String,
-    hasArrow: Boolean,
+    link: { type: String, default: "/" },
+    linkText: { type: String, default: "Back" },
+    hasArrow: { type: Boolean, default: true },
+  },
+  components: {
+    WsLink,
   },
 };
 </script>
@@ -19,34 +30,41 @@ export default {
 <style lang="scss" scoped>
 .back-link-container {
   cursor: pointer;
+  display: flex;
+  align-items: flex-end;
+}
+
+.back-link {
+  color: var(--color-black);
 }
 
 .arrow {
-  background: #000;
-  height: 2px;
-  width: 25px;
+  background: var(--color-black);
+  height: 1px;
+  width: 15px;
   position: relative;
+  transform: translateY(-8.5px);
+  margin-right: 1px;
 
   &::before,
   &::after {
     content: "";
-    background: #000;
+    background: var(--color-black);
     position: absolute;
-    height: 2px;
+    height: 1px;
     border-radius: 5px;
-    width: 10px;
+    width: 6px;
+    left: -1px;
   }
 
   &::before {
-    left: -2px;
-    bottom: -3px;
-    transform: rotate(45deg);
+    bottom: -2px;
+    transform: rotate(50deg);
   }
 
   &::after {
-    left: -2px;
-    top: -3px;
-    transform: rotate(-45deg);
+    top: -2px;
+    transform: rotate(-50deg);
   }
 }
 </style>

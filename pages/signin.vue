@@ -2,7 +2,7 @@
   <main>
     <WsCard>
       <WsText :tag="h1">
-        Sign In
+        Sign in
       </WsText>
 
       <WsText>Not signed-up? <WsLink href="/signup" >Register</WsLink></WsText>
