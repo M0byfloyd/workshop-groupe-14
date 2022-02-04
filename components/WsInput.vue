@@ -1,8 +1,8 @@
 <template>
-    <WsLabel>
+    <WsText :tag="label">
       {{ label }}
       <input :type="type">
-    </WsLabel>
+    </WsText>
 </template>
 
 <script>
