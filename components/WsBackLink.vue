@@ -35,11 +35,11 @@ export default {
 }
 
 .back-link {
-  color: var(--color-black);
+  color: var(--color-gray_dark);
 }
 
 .arrow {
-  background: var(--color-black);
+  background: var(--color-gray_dark);
   height: 1px;
   width: 15px;
   position: relative;
@@ -49,7 +49,7 @@ export default {
   &::before,
   &::after {
     content: "";
-    background: var(--color-black);
+    background: var(--color-gray_dark);
     position: absolute;
     height: 1px;
     border-radius: 5px;

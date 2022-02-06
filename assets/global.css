@@ -1,25 +1,28 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 :root {
-  --color-primary: #27d2c8;
-  --color-secondary: #ee4f4f;
+  --color-primary: #0145AB;
+  --color-secondary: #678FCD;
+  --color-third: #99B5DD;
+  --color-error: #ee4f4f;
   --color-action: #7bb9fa;
-  --color-black: #212121;
-  --color-gray_light: #dddddd;
-  --color-gray_dark: #a5a5a5;
+  --color-gray_dark: #212121;
+  --color-gray_light: #9e9e9e;
 
-  --space-s: 15px;
-  --space-m: 25px;
-  --space-l: 40px;
+  --space-s: 16px;
+  --space-m: 24px;
+  --space-l: 32px;
 
-  --font_size-h1: 48px;
-  --font_size-h2: 34px;
-  --font_size-h3: 28px;
-  --font_size-h4: 18px;
-  --font_size-h5: 14px;
-  --font_size-p: 14px;
+  --font_size-h1: 36px;
+  --font_size-h2: 24px;
+  --font_size-h3: 18px;
+  --font_size-h4: 16px;
+  --font_size-subtitle: 14px;
+  --font_size-text: 14px;
+  --font_size-label: 12px;
 
   --font_weight-semibold: 700;
+  --font_weight-medium: 500;
   --font_weight-regular: 400;
 
   --border-radius: 3px;
@@ -27,6 +30,13 @@
 
 * {
   font-family: "Inter";
+  transition: all 0.3s ease;
+}
+
+body {
+  margin: var(--space-l) var(--space-m);
+  max-width: calc(100vw - (var(--space-m) * 2));
+  overflow-x: hidden;
 }
 
 h1,
@@ -35,12 +45,14 @@ h3,
 h4,
 h5 {
   font-weight: var(--font_weight-semibold);
+  margin: 0;
 }
 
 a,
 p {
   font-weight: var(--font_weight-regular);
   font-size: var(--font_size-p);
+  margin: 0;
 }
 
 a {
@@ -56,11 +68,18 @@ input {
 
 button {
   background-color: var(--color-primary);
-  border: 1px var(--color-primary);
-  color: var(--color-gray_light);
+  border: 1px solid var(--color-primary);
+  color: white;
   padding: 10px 20px;
 }
 
+button:focus {
+  background-color: white;
+  
+  color: var(--color-primary);
+}
+
 input {
-  border: 1px var(--color-primary);
+  border: 1px solid var(--color-gray_dark);
+  padding: 10px;
 }

@@ -1,25 +1,30 @@
 <template>
   <div class="ws-input">
-    <WsText :tag="label">
-      {{ label }}
+    <WsText class="input-label" tag="label">
+      <slot></slot>
     </WsText>
-    <input :type="type" />
+    <input :placeholder="placeholder" :type="type" />
   </div>
 </template>
 
 <script>
 import WsText from "~/components/WsText";
+
 export default {
   name: "WsInput",
   components: { WsText },
   props: {
     type: { type: String, default: "text" },
-    label: { type: String, required: true },
+    placeholder: { type: String, default: "" },
   },
 };
 </script>
 
 <style lang="scss" scoped>
+.input-label {
+  margin-bottom: var(--space-s);
+}
+
 .ws-input {
   display: flex;
   flex-direction: column;
