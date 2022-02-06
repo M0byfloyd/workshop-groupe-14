@@ -2,16 +2,24 @@
   <div id="new-password">
     <WsBackLink link="/" :hasArrow="true">Back</WsBackLink>
     <WsSpace size="l" :horizontal="true" :scale="2" />
-    <WsText tag="h1">Reset password</WsText>
+    <WsText tag="h1">New password</WsText>
     <WsSpace size="l" :horizontal="true" :scale="1.5" />
     <WsText tag="p"
-      >Enter the email associated with your account and we will send an email
-      with instructions to reset your password</WsText
+      >Your new password must be different from previous used password</WsText
     >
     <WsSpace size="l" :horizontal="true" :scale="1" />
-    <WsInput type="email" placeholder="your@mail.com">Email adress</WsInput>
-    <WsSpace size="l" :horizontal="true" :scale="1" />
-    <WsLink href="/reset-password/check-mail"><WsButton>Confirm</WsButton></WsLink>
+    <!-- <WsInput type="email" placeholder="your@mail.com">Email adress</WsInput> -->
+    <WsText tag="p"
+      >New Password</WsText
+    >
+    <WsInput placeholder="********" label="Password" type="password"/>
+    <WsSpace size="m" :horizontal="true" :scale="1" />
+    <WsText tag="p"
+      >Confirm Password</WsText
+    >
+    <WsInput placeholder="********" label="Password" type="password"/>
+    <WsSpace size="s" :horizontal="true" :scale="2" />
+    <WsLink href="/signin"><WsButton>Confirm</WsButton></WsLink>
   </div>
 </template>
 
@@ -24,7 +32,7 @@ import WsButton from "/components/WsButton";
 import WsSpace from "/components/WsSpace";
 
 export default {
-  name: "reset-password",
+  name: "new-password",
   components: {
     WsBackLink,
     WsText,
