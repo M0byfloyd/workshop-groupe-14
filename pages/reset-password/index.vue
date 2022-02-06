@@ -11,12 +11,13 @@
     <WsSpace size="l" :horizontal="true" :scale="1" />
     <WsInput type="email" placeholder="your@mail.com">Email adress</WsInput>
     <WsSpace size="l" :horizontal="true" :scale="1" />
-    <WsButton>Confirm</WsButton>
+    <WsLink href="/reset-password/check-mail"><WsButton>Confirm</WsButton></WsLink>
   </div>
 </template>
 
 <script>
 import WsBackLink from "/components/WsBackLink";
+import WsLink from "/components/WsLink";
 import WsText from "/components/WsText";
 import WsInput from "/components/WsInput";
 import WsButton from "/components/WsButton";
@@ -30,6 +31,7 @@ export default {
     WsSpace,
     WsInput,
     WsButton,
+    WsLink,
   },
 };
 </script>

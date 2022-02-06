@@ -1,7 +1,11 @@
 <template>
   <span>
-    <a :style="'color:' + customStyle.color" v-if="out" :href="href"><slot></slot></a>
-    <NuxtLink :style="'color:' + customStyle.color" v-else :to="href"><slot></slot></NuxtLink>
+    <a :style="customStyle" v-if="out" :href="href"
+      ><slot></slot
+    ></a>
+    <NuxtLink :style="customStyle" v-else :to="href"
+      ><slot></slot
+    ></NuxtLink>
   </span>
 </template>
 
@@ -12,7 +16,8 @@ export default {
     out: { type: Boolean, default: false },
     href: { type: String, required: true },
     customStyle: {
-      color: "var(--color-primary)",
+      default: "",
+      type: String,
     },
   },
 };
