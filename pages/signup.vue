@@ -11,6 +11,7 @@
     >
     <WsSpace size="m" :horizontal="true" />
     <WsInput v-model="password" type="password" placeholder="**********"
+    warningMessage="Message d'erreur "
       >Password</WsInput
     >
     <WsSpace size="l" :horizontal="true" />
