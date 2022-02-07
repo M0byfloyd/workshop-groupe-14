@@ -20,7 +20,7 @@ export default {
     },
     scale: {
       type: Number,
-      default: 0,
+      default: 1,
     },
     horizontal: {
       type: Boolean,

@@ -1,5 +1,5 @@
 <template>
-  <button :type="type">
+  <button :disabled="disabled" :type="type">
     <slot> </slot>
   </button>
 </template>
@@ -9,6 +9,7 @@ export default {
   name: "WsButton",
   props: {
     type: { type: String, default: "button" },
+    disabled: { type: Boolean, default: true },
   },
 };
 </script>
