@@ -14,14 +14,14 @@
     <WsText tag="small"
       >We have sent a password revover instructions to your email</WsText
     >
-    <WsSpace size="s" :horizontal="true" />
+    <WsSpace size="m" :horizontal="true" />
     <WsLink href="#"><WsButton>Open your email</WsButton></WsLink>
     <WsSpace size="s" :horizontal="true" />
     <WsLink href="new-password" customStyle="color: var(--color-gray_dark);">Skip</WsLink>
     <WsSpace size="l" :scale="8" :horizontal="true" />
     <WsText tag="small"
       >Did you not receive check your spam filter or
-      <WsLink href="/reset-password">try another email adress</WsLink></WsText
+      <WsLink customStyle="color: var(--color-primary)" href="/reset-password">try another email adress</WsLink></WsText
     >
   </div>
 </template>

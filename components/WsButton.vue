@@ -9,7 +9,7 @@ export default {
   name: "WsButton",
   props: {
     type: { type: String, default: "button" },
-    disabled: { type: Boolean, default: true },
+    disabled: { type: Boolean, default: false },
   },
 };
 </script>
