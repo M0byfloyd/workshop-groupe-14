@@ -1,11 +1,7 @@
 <template>
   <span>
-    <a :style="customStyle" v-if="out" :href="href"
-      ><slot></slot
-    ></a>
-    <NuxtLink :style="customStyle" v-else :to="href"
-      ><slot></slot
-    ></NuxtLink>
+    <a :disabled="disabled" :style="customStyle" v-if="out" :href="href"><slot></slot></a>
+    <NuxtLink :disabled="disabled" :style="customStyle" v-else :to="href"><slot></slot></NuxtLink>
   </span>
 </template>
 
@@ -15,10 +11,8 @@ export default {
   props: {
     out: { type: Boolean, default: false },
     href: { type: String, required: true },
-    customStyle: {
-      default: "",
-      type: String,
-    },
+    customStyle: { type: String, default: "" },
+    disabled: { type: Boolean, required: false },
   },
 };
 </script>

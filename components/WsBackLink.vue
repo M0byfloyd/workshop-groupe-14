@@ -1,14 +1,15 @@
 <template>
-  <div class="back-link-container">
-    <div class="arrow" v-if="hasArrow"></div>
-    <WsLink
-      class="back-link"
-      :customStyle="{ color: 'var(--color-black)' }"
-      :href="link"
-    >
+  <WsLink
+    class="back-link"
+    :customStyle="'color: var(--color-black)'"
+    :href="link"
+  >
+    <div class="back-link-container">
+      <div class="arrow" v-if="hasArrow"></div>
+
       {{ linkText }}
-    </WsLink>
-  </div>
+    </div>
+  </WsLink>
 </template>
 
 <script>
@@ -29,13 +30,14 @@ export default {
 
 <style lang="scss" scoped>
 .back-link-container {
-  cursor: pointer;
-  display: flex;
+  display: inline-flex;
   align-items: flex-end;
+  width: min-content;
 }
 
 .back-link {
   color: var(--color-gray_dark);
+  cursor: pointer;
 }
 
 .arrow {

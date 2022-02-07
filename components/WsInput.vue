@@ -3,7 +3,12 @@
     <WsText class="input-label" tag="label">
       <slot></slot>
     </WsText>
-    <input :placeholder="placeholder" :type="type" />
+    <input
+      :value="value"
+      @input="$emit('input', $event.target.value)"
+      :placeholder="placeholder"
+      :type="type"
+    />
   </div>
 </template>
 
@@ -16,6 +21,7 @@ export default {
   props: {
     type: { type: String, default: "text" },
     placeholder: { type: String, default: "" },
+    value: { type: String, default: "" },
   },
 };
 </script>

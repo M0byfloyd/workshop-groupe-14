@@ -6,12 +6,16 @@
     <WsSpace size="l" :horizontal="true" :scale="1.5" />
     <WsText tag="p"
       >Enter the email associated with your account and we will send an email
-      with instructions to reset your password</WsText
+      with instructions to reset your password.</WsText
     >
     <WsSpace size="l" :horizontal="true" :scale="1" />
-    <WsInput type="email" placeholder="your@mail.com">Email adress</WsInput>
+    <WsInput v-model="email" type="email" placeholder="your@mail.com"
+      >Email address</WsInput
+    >
     <WsSpace size="l" :horizontal="true" :scale="1" />
-    <WsLink href="/reset-password/check-mail"><WsButton>Confirm</WsButton></WsLink>
+    <WsLink :disabled="!checkPasswords" href="/reset-password/check-mail"
+      ><WsButton :disabled="!checkPasswords">Confirm</WsButton></WsLink
+    >
   </div>
 </template>
 
@@ -32,6 +36,16 @@ export default {
     WsInput,
     WsButton,
     WsLink,
+  },
+  data() {
+    return {
+      email: "",
+    };
+  },
+  computed: {
+    checkPasswords() {
+      return this.email ? true : false;
+    },
   },
 };
 </script>

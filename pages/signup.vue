@@ -6,12 +6,15 @@
       >Already got an account? <WsLink href="/">Sign in</WsLink></WsText
     >
     <WsSpace size="l" :scale="1.5" :horizontal="true" />
-    <WsInput type="email" placeholder="joe.lee@gmail.com">Email</WsInput>
+    <WsInput v-model="email" type="email" placeholder="joe.lee@gmail.com"
+      >Email</WsInput
+    >
     <WsSpace size="m" :horizontal="true" />
-    <WsInput type="password" placeholder="**********">Password</WsInput>
+    <WsInput v-model="password" type="password" placeholder="**********"
+      >Password</WsInput
+    >
     <WsSpace size="l" :horizontal="true" />
-    <WsSpace size="l" :scale="2" :horizontal="true" />
-    <WsButton>Sign up</WsButton>
+    <WsButton :disabled="!checkInputs">Sign up</WsButton>
   </div>
 </template>
 
@@ -24,5 +27,16 @@ import WsButton from "~/components/WsButton";
 export default {
   name: "signup",
   components: { WsButton, WsInput, WsLink, WsText },
+  computed: {
+    checkInputs() {
+      return this.email && this.password ? true : false;
+    },
+  },
+  data() {
+    return {
+      email: "",
+      password: "",
+    };
+  },
 };
 </script>

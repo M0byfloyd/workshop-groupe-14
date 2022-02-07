@@ -12,14 +12,14 @@
     <WsText tag="p"
       >New Password</WsText
     >
-    <WsInput placeholder="********" label="Password" type="password"/>
+    <WsInput v-model="password1" placeholder="********" label="Password" type="password"/>
     <WsSpace size="m" :horizontal="true" :scale="1" />
     <WsText tag="p"
       >Confirm Password</WsText
     >
-    <WsInput placeholder="********" label="Password" type="password"/>
+    <WsInput v-model="password2" placeholder="********" label="Password" type="password"/>
     <WsSpace size="s" :horizontal="true" :scale="2" />
-    <WsLink href="/signin"><WsButton>Confirm</WsButton></WsLink>
+    <WsLink :disabled="!checkPasswords" href="/"><WsButton :disabled="!checkPasswords">Reset password</WsButton></WsLink>
   </div>
 </template>
 
@@ -41,5 +41,16 @@ export default {
     WsButton,
     WsLink,
   },
+  data() {
+    return  {
+      password1: '',
+      password2: '',
+    }
+  },
+  computed: {
+    checkPasswords() {
+      return this.password1 && this.password2 && this.password1 == this.password2 ? true : false
+    }
+  }
 };
 </script>

@@ -6,17 +6,17 @@
       >Not signed-up? <WsLink href="/signup">Register</WsLink></WsText
     >
     <WsSpace size="l" :scale="1.5" :horizontal="true" />
-    <WsInput ref="email" type="email" placeholder="joe.lee@gmail.com"
+    <WsInput v-model="email" type="email" placeholder="joe.lee@gmail.com"
       >Email</WsInput
     >
     <WsSpace size="m" :horizontal="true" />
-    <WsInput ref="password" type="password" placeholder="**********"
+    <WsInput v-model="password" type="password" placeholder="**********"
       >Password</WsInput
     >
     <WsSpace size="l" :horizontal="true" />
     <WsLink href="/reset-password">Forgot password?</WsLink>
     <WsSpace size="l" :scale="1.25" :horizontal="true" />
-    <WsButton :disabled="disabled">Sign in</WsButton>
+    <WsButton :disabled="!checkInputs">Sign in</WsButton>
   </div>
 </template>
 
@@ -31,8 +31,14 @@ export default {
   components: { WsButton, WsInput, WsLink, WsText },
   data() {
     return {
-      disabled: false,
+      email: '',
+      password: ''
     };
   },
+  computed: {
+    checkInputs() {
+      return this.email && this.password ? true : false;
+    }
+  }
 };
 </script>
